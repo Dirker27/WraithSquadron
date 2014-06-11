@@ -33,6 +33,9 @@ public class CameraTracking : MonoBehaviour
 		freeHorizontalCurrent = 0f;
 		freeVerticalTarget = 0f;
 		freeVerticalCurrent = 0f;
+
+		basePosition = transform.position;
+		baseRotation = transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -49,29 +52,32 @@ public class CameraTracking : MonoBehaviour
 		                                      br.z + freeRotDiff.z);
 		*/
 		Follow ();
-		Freelook ();
+		//Freelook ();
 		//SmartLook ();
 		
 		transform.position = basePosition + freePosDiff;
 		
-		Vector3 br = baseRotation.eulerAngles;
+		/*Vector3 br = baseRotation.eulerAngles;
 		transform.rotation = Quaternion.Euler (br.x + freeRotDiff.x + smartRotDiff.x,
 		                                       br.y + freeRotDiff.y + smartRotDiff.y,
-		                                       br.z + freeRotDiff.z + smartRotDiff.z);
+		                                       br.z + freeRotDiff.z + smartRotDiff.z);*/
 	}
 
 	private void Follow () {
-		distFromPlayer = (fc.thrust / fc.MAX_THRUST) + 1f;
-		basePosition = player.transform.position - (distFromPlayer  * (3f * player.transform.forward) - (1f * player.transform.up));
-		//basePosition = player.transform.position + (-0.4f * player.transform.forward);
+		distFromPlayer = 1f;//(fc.thrust / fc.MAX_THRUST) + 1f;
+		Vector3 targetPosition = player.transform.position - (distFromPlayer  * (3f * player.transform.forward) - (1f * player.transform.up));
+		basePosition = Vector3.Lerp (basePosition, targetPosition, 5f * Time.deltaTime);
 
-		baseRotation = Quaternion.Lerp (baseRotation, player.transform.rotation, 2f * Time.deltaTime);
+		Vector3 targetBullseye = player.transform.position + (10f * player.transform.forward);
+		//baseRotation = Quaternion.Lerp (baseRotation, player.transform.rotation, 2f * Time.deltaTime);
+		transform.LookAt (targetBullseye);
+		/*distFromPlayer = (fc.thrust / fc.MAX_THRUST) + 1f;
+		basePosition = player.transform.position - (distFromPlayer  * (3f * player.transform.forward) - (1f * player.transform.up));
+
+		baseRotation = Quaternion.Lerp (baseRotation, player.transform.rotation, 2f * Time.deltaTime);*/
 	}
 
 	private void Freelook() {
-		//transform.Rotate (-freeVerticalCurrent, 0f, 0f);
-		//transform.Rotate (0f, -freeHorizontalCurrent, 0f);
-
 		float horizontal = Input.GetAxis ("Freelook_Horizontal");
 		float vertical = Input.GetAxis ("Freelook_Vertical");
 
@@ -85,8 +91,6 @@ public class CameraTracking : MonoBehaviour
 		                                    freeHorizontalTarget, 
 		                                    freelookSmooth * Time.deltaTime);
 
-		//transform.localRotation = Quaternion.Euler (freeVerticalCurrent, freeHorizontalCurrent, 0f);
-		//transform.Rotate (freeVerticalCurrent, freeHorizontalTarget, 0f);
 		freePosDiff = new Vector3 (0f, 0f, 0f);
 		freeRotDiff = new Vector3 (freeVerticalCurrent, freeHorizontalCurrent, 0f);
 		//freeRotDiff = (freeVerticalCurrent * player.transform.right) + (freeHorizontalCurrent * player.transform.up);
