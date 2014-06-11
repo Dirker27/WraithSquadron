@@ -1,0 +1,19 @@
+                        *** Star Wars X-Wing Fighter ***
+
+Original LightWave mesh and textures by Don Showalter
+
+Original conversion to 3D Studio MAx by Mateen Greenway 
+
+Advanced surfacing and optimization for MAX by Todd Bruno
+
+This model is not to b e used by any commercial porposes
+ and is intended for individual artist's non-profit use.
+
+Copyright 2000 Lucasfilm Ltd., Don Showalter, Mateen
+ Greenway, Todd Bruno
+
+
+This and other great models are at SCIFI 3D <www.theforce.net/scifi3d/>
+Please read the AGREEMENT FORM and FAQ on the conditions of use.  All
+credit must be given for all use according to the Agreement Form upon
+download of any model from SCIFI 3D.

@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 1eee45762775d6842b90bf4130fa37e4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Back View
+    100004: Back View.target
+    100006: body
+    100008: Dummy01
+    100010: Light01
+    100012: Light01.target
+    100014: Light02
+    100016: Light02.target
+    100018: Light03
+    100020: Light03.target
+    100022: Panavision
+    100024: Panavision.target
+    100026: side view
+    100028: side view.target
+    100030: Top back
+    100032: Top back.target
+    100034: WB Cannon3
+    100036: WB Cannon4
+    100038: WB Canonos
+    100040: WB Canopy
+    100042: WB Cockpit
+    100044: WB Engine
+    100046: WB Floor
+    100048: WB Grill
+    100050: WB Gunport
+    100052: WB Hinge
+    100054: WB Lrcanon
+    100056: WB Nozzles
+    100058: WB Seat
+    100060: WB Suport1
+    100062: WB SuportT
+    100064: WB Support
+    100066: WB ToredoT
+    100068: WB Wing 1
+    100070: WB Wing 2
+    100072: WB Wing 3
+    100074: WB Wing 4
+    100076: WB Wingart
+    400000: //RootNode
+    400002: Back View
+    400004: Back View.target
+    400006: body
+    400008: Dummy01
+    400010: Light01
+    400012: Light01.target
+    400014: Light02
+    400016: Light02.target
+    400018: Light03
+    400020: Light03.target
+    400022: Panavision
+    400024: Panavision.target
+    400026: side view
+    400028: side view.target
+    400030: Top back
+    400032: Top back.target
+    400034: WB Cannon3
+    400036: WB Cannon4
+    400038: WB Canonos
+    400040: WB Canopy
+    400042: WB Cockpit
+    400044: WB Engine
+    400046: WB Floor
+    400048: WB Grill
+    400050: WB Gunport
+    400052: WB Hinge
+    400054: WB Lrcanon
+    400056: WB Nozzles
+    400058: WB Seat
+    400060: WB Suport1
+    400062: WB SuportT
+    400064: WB Support
+    400066: WB ToredoT
+    400068: WB Wing 1
+    400070: WB Wing 2
+    400072: WB Wing 3
+    400074: WB Wing 4
+    400076: WB Wingart
+    2300000: body
+    2300002: WB Cannon3
+    2300004: WB Cannon4
+    2300006: WB Canonos
+    2300008: WB Canopy
+    2300010: WB Cockpit
+    2300012: WB Engine
+    2300014: WB Floor
+    2300016: WB Grill
+    2300018: WB Gunport
+    2300020: WB Hinge
+    2300022: WB Lrcanon
+    2300024: WB Nozzles
+    2300026: WB Seat
+    2300028: WB Suport1
+    2300030: WB SuportT
+    2300032: WB Support
+    2300034: WB ToredoT
+    2300036: WB Wing 1
+    2300038: WB Wing 2
+    2300040: WB Wing 3
+    2300042: WB Wing 4
+    2300044: WB Wingart
+    3300000: body
+    3300002: WB Cannon3
+    3300004: WB Cannon4
+    3300006: WB Canonos
+    3300008: WB Canopy
+    3300010: WB Cockpit
+    3300012: WB Engine
+    3300014: WB Floor
+    3300016: WB Grill
+    3300018: WB Gunport
+    3300020: WB Hinge
+    3300022: WB Lrcanon
+    3300024: WB Nozzles
+    3300026: WB Seat
+    3300028: WB Suport1
+    3300030: WB SuportT
+    3300032: WB Support
+    3300034: WB ToredoT
+    3300036: WB Wing 1
+    3300038: WB Wing 2
+    3300040: WB Wing 3
+    3300042: WB Wing 4
+    3300044: WB Wingart
+    4300000: WB Engine
+    4300002: WB Nozzles
+    4300004: WB Grill
+    4300006: WB Support
+    4300008: WB ToredoT
+    4300010: WB Wing 2
+    4300012: WB Hinge
+    4300014: WB Wing 3
+    4300016: WB Cannon3
+    4300018: WB Wing 4
+    4300020: WB Cannon4
+    4300022: WB Suport1
+    4300024: WB Wing 1
+    4300026: WB SuportT
+    4300028: WB Gunport
+    4300030: WB Lrcanon
+    4300032: WB Wingart
+    4300034: WB Cockpit
+    4300036: WB Canopy
+    4300038: WB Floor
+    4300040: WB Seat
+    4300042: WB Canonos
+    4300044: body
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
