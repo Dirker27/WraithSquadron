@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: a01e90fc6fd3a43408d24baa24e8da8a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: default#1
+    100002: default#1.target
+    100004: //RootNode
+    100006: gunmetal
+    100008: gunmetalda
+    100010: medfrig4
+    100012: mf aftflat
+    100014: mf aftmai1
+    100016: mf aftmai2
+    100018: mf aftmain
+    100020: mf aftpipe
+    100022: mf aftsmo1
+    100024: mf aftsmoo
+    100026: mf antengr
+    100028: mf antensi
+    100030: mf bluelit
+    100032: mf engine
+    100034: mf engine1
+    100036: mf engine2
+    100038: mf engineb
+    100040: mf engineg
+    100042: mf fins
+    100044: mf foredow
+    100046: mf forefl1
+    100048: mf forefl2
+    100050: mf forefl3
+    100052: mf forefl4
+    100054: mf forefla
+    100056: mf foretow
+    100058: mf midpipe
+    100060: mf noseco1
+    100062: mf noseco2
+    100064: mf noseco3
+    100066: mf nosecon
+    100068: mf pipes
+    100070: mf pipes2
+    100072: mf pipes3
+    100074: mf spine
+    100076: mf spine2
+    100078: mf spinebr
+    100080: mf yellowl
+    100082: window fra
+    400000: default#1
+    400002: default#1.target
+    400004: //RootNode
+    400006: gunmetal
+    400008: gunmetalda
+    400010: medfrig4
+    400012: mf aftflat
+    400014: mf aftmai1
+    400016: mf aftmai2
+    400018: mf aftmain
+    400020: mf aftpipe
+    400022: mf aftsmo1
+    400024: mf aftsmoo
+    400026: mf antengr
+    400028: mf antensi
+    400030: mf bluelit
+    400032: mf engine
+    400034: mf engine1
+    400036: mf engine2
+    400038: mf engineb
+    400040: mf engineg
+    400042: mf fins
+    400044: mf foredow
+    400046: mf forefl1
+    400048: mf forefl2
+    400050: mf forefl3
+    400052: mf forefl4
+    400054: mf forefla
+    400056: mf foretow
+    400058: mf midpipe
+    400060: mf noseco1
+    400062: mf noseco2
+    400064: mf noseco3
+    400066: mf nosecon
+    400068: mf pipes
+    400070: mf pipes2
+    400072: mf pipes3
+    400074: mf spine
+    400076: mf spine2
+    400078: mf spinebr
+    400080: mf yellowl
+    400082: window fra
+    2300000: gunmetal
+    2300002: gunmetalda
+    2300004: mf aftflat
+    2300006: mf aftmai1
+    2300008: mf aftmai2
+    2300010: mf aftmain
+    2300012: mf aftpipe
+    2300014: mf aftsmo1
+    2300016: mf aftsmoo
+    2300018: mf antengr
+    2300020: mf antensi
+    2300022: mf bluelit
+    2300024: mf engine
+    2300026: mf engine1
+    2300028: mf engine2
+    2300030: mf engineb
+    2300032: mf engineg
+    2300034: mf fins
+    2300036: mf foredow
+    2300038: mf forefl1
+    2300040: mf forefl2
+    2300042: mf forefl3
+    2300044: mf forefl4
+    2300046: mf forefla
+    2300048: mf foretow
+    2300050: mf midpipe
+    2300052: mf noseco1
+    2300054: mf noseco2
+    2300056: mf noseco3
+    2300058: mf nosecon
+    2300060: mf pipes
+    2300062: mf pipes2
+    2300064: mf pipes3
+    2300066: mf spine
+    2300068: mf spine2
+    2300070: mf spinebr
+    2300072: mf yellowl
+    2300074: window fra
+    3300000: gunmetal
+    3300002: gunmetalda
+    3300004: mf aftflat
+    3300006: mf aftmai1
+    3300008: mf aftmai2
+    3300010: mf aftmain
+    3300012: mf aftpipe
+    3300014: mf aftsmo1
+    3300016: mf aftsmoo
+    3300018: mf antengr
+    3300020: mf antensi
+    3300022: mf bluelit
+    3300024: mf engine
+    3300026: mf engine1
+    3300028: mf engine2
+    3300030: mf engineb
+    3300032: mf engineg
+    3300034: mf fins
+    3300036: mf foredow
+    3300038: mf forefl1
+    3300040: mf forefl2
+    3300042: mf forefl3
+    3300044: mf forefl4
+    3300046: mf forefla
+    3300048: mf foretow
+    3300050: mf midpipe
+    3300052: mf noseco1
+    3300054: mf noseco2
+    3300056: mf noseco3
+    3300058: mf nosecon
+    3300060: mf pipes
+    3300062: mf pipes2
+    3300064: mf pipes3
+    3300066: mf spine
+    3300068: mf spine2
+    3300070: mf spinebr
+    3300072: mf yellowl
+    3300074: window fra
+    4300000: gunmetal
+    4300002: gunmetalda
+    4300004: mf aftflat
+    4300006: mf aftmain
+    4300008: mf aftmai1
+    4300010: mf aftmai2
+    4300012: mf aftpipe
+    4300014: mf aftsmoo
+    4300016: mf aftsmo1
+    4300018: mf antengr
+    4300020: mf antensi
+    4300022: mf bluelit
+    4300024: mf engine
+    4300026: mf engineb
+    4300028: mf engineg
+    4300030: mf engine1
+    4300032: mf engine2
+    4300034: mf fins
+    4300036: mf foredow
+    4300038: mf forefla
+    4300040: mf forefl1
+    4300042: mf forefl2
+    4300044: mf forefl3
+    4300046: mf forefl4
+    4300048: mf foretow
+    4300050: mf midpipe
+    4300052: mf nosecon
+    4300054: mf noseco1
+    4300056: mf noseco2
+    4300058: mf noseco3
+    4300060: mf pipes
+    4300062: mf pipes2
+    4300064: mf pipes3
+    4300066: mf spine
+    4300068: mf spine2
+    4300070: mf spinebr
+    4300072: mf yellowl
+    4300074: window fra
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

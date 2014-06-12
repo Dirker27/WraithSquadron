@@ -9,11 +9,6 @@ public enum WeaponClassification {
 public abstract class Weapon : MonoBehaviour
 {
 	public WeaponClassification classification = WeaponClassification.PRIMARY;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update ()

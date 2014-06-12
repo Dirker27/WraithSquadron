@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 6c7db6c920cc1d74d8218f4ebedf4ab4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: AW Cockpit
+    100004: AW EngineL
+    100006: AW EngineR
+    100008: AW HullC
+    100010: AW HullL
+    100012: AW HullR
+    100014: AW LaserL
+    100016: AW LaserR
+    100018: body
+    100020: Light02
+    100022: Light02.target
+    100024: Light04
+    100026: Light04.target
+    100028: Panavision
+    100030: Panavision.target
+    100032: Top View
+    100034: Top View.target
+    400000: //RootNode
+    400002: AW Cockpit
+    400004: AW EngineL
+    400006: AW EngineR
+    400008: AW HullC
+    400010: AW HullL
+    400012: AW HullR
+    400014: AW LaserL
+    400016: AW LaserR
+    400018: body
+    400020: Light02
+    400022: Light02.target
+    400024: Light04
+    400026: Light04.target
+    400028: Panavision
+    400030: Panavision.target
+    400032: Top View
+    400034: Top View.target
+    2300000: AW Cockpit
+    2300002: AW EngineL
+    2300004: AW EngineR
+    2300006: AW HullC
+    2300008: AW HullL
+    2300010: AW HullR
+    2300012: AW LaserL
+    2300014: AW LaserR
+    2300016: body
+    3300000: AW Cockpit
+    3300002: AW EngineL
+    3300004: AW EngineR
+    3300006: AW HullC
+    3300008: AW HullL
+    3300010: AW HullR
+    3300012: AW LaserL
+    3300014: AW LaserR
+    3300016: body
+    4300000: AW Cockpit
+    4300002: AW EngineL
+    4300004: AW HullL
+    4300006: AW LaserL
+    4300008: AW EngineR
+    4300010: AW LaserR
+    4300012: AW HullR
+    4300014: AW HullC
+    4300016: body
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

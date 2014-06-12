@@ -8,7 +8,7 @@ public class FlightController : MonoBehaviour {
 	public float MAX_THRUST = 100f; // MGLT
 	public float MIN_THRUST = 5f; // MGLT
 	public float MAX_BANK = 60f;
-	public float thrust = 10f; // MGLT
+	public float thrust = 25f; // MGLT
 
 	public float turnSpeed = 25f;
 	public float pitchSpeed = 25f;
@@ -86,7 +86,7 @@ public class FlightController : MonoBehaviour {
 		}
 		
 		Vector3 moveDirection = transform.forward;
-		float velocity = thrust * 2.77778f;
+		float velocity = thrust * 0.277778f;
 		trajectory = moveDirection * velocity;
 		transform.position += trajectory * Time.deltaTime;
 	}

@@ -1,0 +1,4 @@
+Model curtosy of ROBOTFARM
+http://www.robotfarm.de/launch.html
+See the site for additional info.
+Main author of meshes:  MOJO

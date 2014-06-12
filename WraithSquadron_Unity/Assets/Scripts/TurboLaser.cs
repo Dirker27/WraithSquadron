@@ -4,9 +4,9 @@ using System.Collections;
 public class TurboLaser : MonoBehaviour
 {
 	public float damage = 10f;
-	public float range = 500f;
-	private float speed = 250f;
-	public Color color = Color.green;
+	public float range = 50f;
+	private float speed = 75f;
+	public Color color = Color.red;
 
 	private Vector3 startPos;
 
@@ -20,7 +20,7 @@ public class TurboLaser : MonoBehaviour
 
 		renderer.material.color = color;
 
-		transform.localScale = new Vector3 (0.1f, 0.1f, 4f);
+		transform.localScale = new Vector3 (0.05f, 0.05f, 3f);
 
 		rigidbody.velocity = transform.forward * speed;
 	}

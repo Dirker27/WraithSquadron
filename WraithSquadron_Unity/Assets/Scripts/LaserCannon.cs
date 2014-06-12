@@ -15,7 +15,7 @@ public class LaserCannon : Weapon {
 	public override void Fire () {
 		if (fireInterval > FIRE_RATE) {
 			GameObject laser = GameObject.CreatePrimitive(PrimitiveType.Cube);
-			laser.transform.position = transform.position + (transform.forward * 5f);
+			laser.transform.position = transform.position + (transform.forward * 3.5f);
 			laser.transform.rotation = transform.rotation;
 			laser.AddComponent<TurboLaser>();
 

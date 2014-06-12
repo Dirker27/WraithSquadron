@@ -7,7 +7,7 @@ public class EngineLight : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		fc = GameObject.FindGameObjectWithTag ("Player").GetComponent<FlightController> ();
+		fc = GameObject.FindGameObjectWithTag("Player").GetComponent<FlightController>();
 	}
 	
 	// Update is called once per frame

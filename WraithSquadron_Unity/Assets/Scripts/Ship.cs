@@ -1,10 +1,35 @@
 using UnityEngine;
 using System.Collections;
 
+public enum Faction {
+	// Space Religon
+	JEDI,
+	SITH,
+	// Clone Wars
+	REPUBLIC,
+	CONFEDERACY,
+	// Galactic Civil War
+	ALLIANCE,
+	EMPIRE,
+	// Crime Lords
+	BLACK_SUN,
+	ZANN_CONSORTIUM,
+	// Independent
+	PIRATE,
+	MANDALORE
+}
+
 public class Ship : MonoBehaviour
 {
+	public float SHEILD_CAPACITY = 100f;
+	public float SHEILD_RECHARGE = 10f;
+	public float SHEILD_DELAY = 10f;
+
+	public Faction faction = Faction.EMPIRE;
+
 	public bool crippled = false;
 	public float hullIntegrity = 100f;
+	public float sheildIntegrity = 100f;
 
 	private FlightController flightControl;
 	
@@ -16,6 +41,7 @@ public class Ship : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		// Cripple Ship
 		if (hullIntegrity <= 0f && crippled == false) {
 			flightControl.crippled = true;
 			crippled = true;
