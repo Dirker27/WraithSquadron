@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Flight.cs" />
      <Compile Include="Assets\Scripts\FlightController.cs" />
      <Compile Include="Assets\Scripts\HUDRenderer.cs" />
+     <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\LaserCannon.cs" />
      <Compile Include="Assets\Scripts\Munition.cs" />
      <Compile Include="Assets\Scripts\Ship.cs" />

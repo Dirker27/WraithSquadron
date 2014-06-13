@@ -2,20 +2,23 @@
 using System.Collections;
 
 public class FlightController : MonoBehaviour {
-	public bool turnAssist = true;
-	public bool crippled = false;
-
-	public float MAX_THRUST = 100f; // MGLT
-	public float MIN_THRUST = 5f; // MGLT
-	public float MAX_BANK = 60f;
+	// Flight Behavior
+	public float MIN_THRUST = 10f;    // MGLT
+	public float MAX_THRUST = 100f;   // MGLT
+	public float ACCELLERATION = 30f; // MGLT/Second
+	public float DECELLERATION = 50f; // MGLT/Second
+	public float MAX_BANK = 60f;      // Degrees
+	public float TURN_SPEED = 50f;    // Degrees/Second
+	public float ROLL_SPEED = 100f;   // Degrees/Second
+	
 	public float thrust = 25f; // MGLT
 
 	public float turnSpeed = 25f;
 	public float pitchSpeed = 25f;
 	public float rollSpeed = 25f;
 	public float bankSmooth = 5f;
-	public float throttleAccelleration = 30f;
-	public float brakeDecelleration = 50f;
+
+	private const float MGLT_CONVERSION = 0.2777778f;
 
 	private float nativeRoll;
 	private float bankTarget;
@@ -23,48 +26,36 @@ public class FlightController : MonoBehaviour {
 
 	public Vector3 trajectory;
 
+	public Ship shipData;
+
 	// Use this for initialization
 	void Start () {
+		shipData = GetComponent<Ship>();
+
 		nativeRoll = transform.rotation.z;
 		bankTarget = 0f;
 		bankCurrent = 0f;
 
 		trajectory = Vector3.zero;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (! crippled) {
-			Steering ();
-			Thrusting ();
-		}
-	}
 
-	private void Steering() {
-		if (Input.GetButtonDown("TurnAssist")) {
-			turnAssist = !turnAssist;
-		}
-
+	public void Steer(Vector3 input) {
 		// Reset Augmented Roll
 		transform.Rotate (0f, 0f, -bankCurrent);
 
-		float pitch = Input.GetAxis ("Pitch");
-		float yaw = (turnAssist) ? Input.GetAxis ("Yaw") : 0f;
-		float roll = (turnAssist) ? 0f : Input.GetAxis ("Roll");
-
-		bool rudder_left = Input.GetButton ("Rudder_Left");
+		/*bool rudder_left = Input.GetButton ("Rudder_Left");
 		bool rudder_right = Input.GetButton ("Rudder_Right");
 		float rudder = (rudder_left) ? -1f : (rudder_right) ? 1f : 0f;
-		rudder *= turnSpeed * Time.deltaTime / 2f;
+		rudder *= turnSpeed * Time.deltaTime / 2f;*/
 
-		Vector3 deltaRotation = new Vector3 (-pitch * pitchSpeed * Time.deltaTime,
-		                                     yaw * turnSpeed * Time.deltaTime + rudder,
-		                                     -roll * rollSpeed * Time.deltaTime);
+		Vector3 deltaRotation = new Vector3 (-input.x * pitchSpeed * Time.deltaTime,
+		                                     input.y * turnSpeed * Time.deltaTime,// + rudder,
+		                                     -input.z * rollSpeed * Time.deltaTime);
 		transform.Rotate (deltaRotation);
-		nativeRoll += -roll * rollSpeed * Time.deltaTime;
+		nativeRoll += -input.z * rollSpeed * Time.deltaTime;
 
 		//- Banking ----------
-		bankTarget = -yaw * MAX_BANK;
+		bankTarget = -input.y * MAX_BANK;
 
 		bankCurrent = Mathf.Lerp (bankCurrent, bankTarget, bankSmooth * Time.deltaTime);
 
@@ -73,20 +64,18 @@ public class FlightController : MonoBehaviour {
 		transform.Rotate (0f, 0f, bankCurrent);
 	}
 
-	private void Thrusting() {
-		float throttle = Input.GetAxis ("Throttle");
-		float brake = Input.GetAxis ("Brake");
-		thrust += throttle * throttleAccelleration * Time.deltaTime;
+	public void Throttle(float throttle, float brake) {
+		thrust += throttle * ACCELLERATION * Time.deltaTime;
 		if (thrust > MAX_THRUST) {
 			thrust = MAX_THRUST;
 		}
-		thrust -= brake * brakeDecelleration * Time.deltaTime;
+		thrust -= brake * DECELLERATION * Time.deltaTime;
 		if (thrust < MIN_THRUST) {
 			thrust = MIN_THRUST;
 		}
 		
 		Vector3 moveDirection = transform.forward;
-		float velocity = thrust * 0.277778f;
+		float velocity = thrust * MGLT_CONVERSION;
 		trajectory = moveDirection * velocity;
 		transform.position += trajectory * Time.deltaTime;
 	}

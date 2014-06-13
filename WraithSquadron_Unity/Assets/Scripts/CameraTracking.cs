@@ -70,7 +70,7 @@ public class CameraTracking : MonoBehaviour
 		Vector3 targetBullseye = player.transform.position + (10f * player.transform.forward);
 		//baseRotation = Quaternion.Lerp (baseRotation, player.transform.rotation, 2f * Time.deltaTime);
 		transform.LookAt (targetBullseye);*/
-		distFromPlayer = (fc.thrust / fc.MAX_THRUST) + 2f;
+		distFromPlayer = (fc.thrust * 3f / fc.MAX_THRUST) + 3f;
 		basePosition = player.transform.position - (distFromPlayer  * (0.5f * player.transform.forward) - (0.5f * player.transform.up));
 
 		baseRotation = Quaternion.Lerp (baseRotation, player.transform.rotation, 5f * Time.deltaTime);

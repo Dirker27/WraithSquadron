@@ -3,10 +3,10 @@ using System.Collections;
 
 public class TurboLaser : MonoBehaviour
 {
-	public float damage = 10f;
+	public float damage = 20f;
 	public float range = 50f;
 	private float speed = 75f;
-	public Color color = Color.red;
+	public Color color = Color.green;
 
 	private Vector3 startPos;
 

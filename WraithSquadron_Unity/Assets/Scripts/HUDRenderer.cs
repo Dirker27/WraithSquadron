@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HUDRenderer : MonoBehaviour
 {
-	private GameObject player;
+	/*private GameObject player;
 	private FlightController flightData;
 	private Ship shipData;
 
@@ -25,6 +25,6 @@ public class HUDRenderer : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 	
-	}
+	}*/
 }
 
