@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\HUDRenderer.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\LaserCannon.cs" />
+     <Compile Include="Assets\Scripts\LinkedLaserSystem.cs" />
      <Compile Include="Assets\Scripts\Munition.cs" />
      <Compile Include="Assets\Scripts\Ship.cs" />
      <Compile Include="Assets\Scripts\TurboLaser.cs" />

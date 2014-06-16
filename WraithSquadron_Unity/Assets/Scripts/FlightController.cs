@@ -5,6 +5,7 @@ public class FlightController : MonoBehaviour {
 	// Flight Behavior
 	public float MIN_THRUST = 10f;    // MGLT
 	public float MAX_THRUST = 100f;   // MGLT
+	public float AVE_THRUST = 45f;    // MGLT
 	public float ACCELLERATION = 30f; // MGLT/Second
 	public float DECELLERATION = 50f; // MGLT/Second
 	public float MAX_BANK = 60f;      // Degrees
@@ -20,7 +21,7 @@ public class FlightController : MonoBehaviour {
 
 	private const float MGLT_CONVERSION = 0.2777778f;
 
-	private float nativeRoll;
+	public float nativeRoll;
 	private float bankTarget;
 	private float bankCurrent;
 
@@ -65,6 +66,8 @@ public class FlightController : MonoBehaviour {
 	}
 
 	public void Throttle(float throttle, float brake) {
+		thrust = Mathf.Lerp (thrust, AVE_THRUST, 0.5f * Time.deltaTime);
+
 		thrust += throttle * ACCELLERATION * Time.deltaTime;
 		if (thrust > MAX_THRUST) {
 			thrust = MAX_THRUST;

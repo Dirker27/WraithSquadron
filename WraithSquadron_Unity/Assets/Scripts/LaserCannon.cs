@@ -1,27 +1,22 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class LaserCannon : Weapon {
+public class LaserCannon : Weapon
+{
+	public Color color = Color.green;
+	public float range = 100f;
+	public float offset = 2f;
 
-	public float FIRE_RATE = 0.2f;
-	private float fireInterval;
+	public override void Target(Vector3 target) { }
 
-	// Use this for initialization
-	void Start () {
-		fireInterval = 0f;
-	}
-	
-	// Update is called once per frame
-	public override void Fire () {
-		if (fireInterval > FIRE_RATE) {
-			GameObject laser = GameObject.CreatePrimitive(PrimitiveType.Cube);
-			laser.transform.position = transform.position + (transform.forward * 3.5f);
-			laser.transform.rotation = transform.rotation;
-			laser.AddComponent<TurboLaser>();
+	public override void Fire() {
+		GameObject laser = new GameObject ();
+		laser.transform.position = transform.position + (transform.forward * offset);
+		laser.transform.rotation = transform.rotation;
 
-			fireInterval = 0f;
-		}
-
-		fireInterval += Time.deltaTime;
+		TurboLaser t = laser.AddComponent<TurboLaser>();
+		t.color = color;
+		t.range = range;
 	}
 }
+

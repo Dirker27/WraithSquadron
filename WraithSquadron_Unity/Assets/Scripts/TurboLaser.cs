@@ -4,7 +4,7 @@ using System.Collections;
 public class TurboLaser : MonoBehaviour
 {
 	public float damage = 20f;
-	public float range = 50f;
+	public float range = 100f;
 	private float speed = 75f;
 	public Color color = Color.green;
 
@@ -12,17 +12,28 @@ public class TurboLaser : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-		gameObject.AddComponent<Rigidbody> ();
-		rigidbody.useGravity = false;
-
-
+		// Transform
+		transform.parent = GameObject.FindGameObjectWithTag ("LaserDump").transform;
 		startPos = transform.position;
 
-		renderer.material.color = color;
+		// Box Collider
+		BoxCollider col = gameObject.AddComponent<BoxCollider> ();
+		col.size = new Vector3 (0.025f, 0.025f, 3f);
 
-		transform.localScale = new Vector3 (0.05f, 0.05f, 3f);
-
+		// Rigidbody
+		gameObject.AddComponent<Rigidbody> ();
 		rigidbody.velocity = transform.forward * speed;
+		rigidbody.useGravity = false;
+
+		// Line Renderer
+		LineRenderer lr = gameObject.AddComponent<LineRenderer> ();
+		lr.material = new Material (Shader.Find("Particles/Additive"));
+		lr.SetWidth (0.05f, 0.05f);
+		lr.SetColors (color, color);
+		lr.castShadows = false;
+		lr.receiveShadows = false;
+		lr.SetPosition(0, transform.position - (transform.forward * -1.5f));
+		lr.SetPosition(1, transform.position - (transform.forward * 1.5f));
 	}
 	
 	// Update is called once per frame
@@ -31,10 +42,14 @@ public class TurboLaser : MonoBehaviour
 		if (delta.magnitude > range) {
 			GameObject.Destroy(gameObject);
 		}
+
+		LineRenderer lr = GetComponent<LineRenderer> ();
+		lr.SetColors (color, color);
+		lr.SetPosition(0, transform.position - (transform.forward * -1.5f));
+		lr.SetPosition(1, transform.position - (transform.forward * 1.5f));
 	}
 
 	void OnCollisionEnter(Collision col) {
 		GameObject.Destroy (gameObject);
 	}
 }
-

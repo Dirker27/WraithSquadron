@@ -18,20 +18,34 @@ public class CameraTracking : MonoBehaviour
 	private float freeVerticalTarget;
 	private float freeVerticalCurrent;
 
+	private float target_dx;
+	private float target_dy;
+	private float target_dz;
+	private float current_dx;
+	private float current_dy;
+	private float current_dz;
+
 	private Vector3 smartRotDiff;
 
 	private float distFromPlayer = 5f;
+
+	private FlightController flightData;
 
 	// Use this for initialization
 	void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
+		flightData = player.GetComponent<FlightController> ();
 		fc = player.GetComponent<FlightController> ();
 
 		freeHorizontalTarget = 0f;
 		freeHorizontalCurrent = 0f;
 		freeVerticalTarget = 0f;
 		freeVerticalCurrent = 0f;
+
+		target_dx = 0f;
+		target_dy = 0.03f;
+		target_dz = -0.2f;
 
 		basePosition = transform.position;
 		baseRotation = transform.rotation;
@@ -57,9 +71,12 @@ public class CameraTracking : MonoBehaviour
 		transform.position = basePosition + freePosDiff;
 		
 		Vector3 br = baseRotation.eulerAngles;
-		transform.rotation = Quaternion.Euler (br.x + freeRotDiff.x + smartRotDiff.x,
-		                                       br.y + freeRotDiff.y + smartRotDiff.y,
-		                                       br.z + freeRotDiff.z + smartRotDiff.z);
+		transform.rotation = Quaternion.Euler (br.x + freeRotDiff.x,
+		                                       br.y + freeRotDiff.y,
+		                                       br.z + freeRotDiff.z);
+
+		//Vector3 lookTarget = player.transform.position + (player.transform.forward * distFromPlayer);
+		//transform.LookAt (lookTarget);
 	}
 
 	private void Follow () {
@@ -70,9 +87,25 @@ public class CameraTracking : MonoBehaviour
 		Vector3 targetBullseye = player.transform.position + (10f * player.transform.forward);
 		//baseRotation = Quaternion.Lerp (baseRotation, player.transform.rotation, 2f * Time.deltaTime);
 		transform.LookAt (targetBullseye);*/
-		distFromPlayer = (fc.thrust * 3f / fc.MAX_THRUST) + 3f;
-		basePosition = player.transform.position - (distFromPlayer  * (0.5f * player.transform.forward) - (0.5f * player.transform.up));
+		distFromPlayer = (fc.thrust * 4f / fc.MAX_THRUST) + 0.4f;
 
+		Vector3 flightControls = InputManager.GetFlightControl();
+		target_dx = Mathf.Sin(flightControls.y / 0.5f) * distFromPlayer;
+		target_dy = Mathf.Sin(flightControls.x / 1.5f) * distFromPlayer + 0.5f;
+		target_dz = Mathf.Cos(flightControls.y / 2f) * -distFromPlayer;
+
+		current_dx = Mathf.Lerp (current_dx, target_dx, 2f * Time.deltaTime);
+		current_dy = Mathf.Lerp (current_dy, target_dy, 2f * Time.deltaTime);
+		current_dz = Mathf.Lerp (current_dz, target_dz, 2f * Time.deltaTime);
+
+		basePosition = player.transform.position + 
+				current_dx * player.transform.right + 
+				current_dy * player.transform.up + 
+				current_dz * player.transform.forward;
+
+		Quaternion targetRotation = player.transform.rotation;
+		Vector3 targetEuler = targetRotation.eulerAngles;
+		//baseRotation = Quaternion.Euler (targetEuler.x, targetEuler.y, flightData.nativeRoll);
 		baseRotation = Quaternion.Lerp (baseRotation, player.transform.rotation, 5f * Time.deltaTime);
 	}
 
@@ -93,10 +126,6 @@ public class CameraTracking : MonoBehaviour
 		freePosDiff = new Vector3 (0f, 0f, 0f);
 		freeRotDiff = new Vector3 (freeVerticalCurrent, freeHorizontalCurrent, 0f);
 		//freeRotDiff = (freeVerticalCurrent * player.transform.right) + (freeHorizontalCurrent * player.transform.up);
-	}
-
-	private void SmartLook() {
-		//smartRotDiff = new Vector3 (-fc.deltaPitch * 10f, fc.deltaYaw * 10f, -fc.deltaRoll * 10f);
 	}
 }
 
