@@ -27,7 +27,7 @@ public class TurboLaser : MonoBehaviour
 
 		// Line Renderer
 		LineRenderer lr = gameObject.AddComponent<LineRenderer> ();
-		lr.material = new Material (Shader.Find("Particles/Additive"));
+		lr.material = new Material (Shader.Find("Particles/Additive") ?? Shader.Find("Legacy Shaders/Particles/Additive"));
 		lr.SetWidth (0.05f, 0.05f);
 		lr.SetColors (color, color);
 		lr.castShadows = false;

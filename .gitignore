@@ -14,3 +14,7 @@ ExportedObj/
 *.unityproj
 *.booproj
 
+# Unity 2022 upgrade (2026)
+Logs/
+UserSettings/
+build/
